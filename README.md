@@ -45,16 +45,18 @@ Edit a `rollup.config.js` [configuration file], import the `createPathTransform`
 ```js
 import { createPathTransform } from 'rollup-sourcemap-path-transform'
 
+const sourcemapPathTransform = createPathTransform({
+  prefixes: {
+    '*src/': '/myproj/'
+  }
+})
+
 export default {
   input: 'src/index.js',
   output: {
     file: 'dist/index.js',
     sourcemap: true,
-    sourcemapPathTransform: createPathTransform({
-      prefixes: {
-        '*src/components/': '/compi/comps/'
-      }
-    })
+    sourcemapPathTransform
   }
 }
 ```
@@ -77,7 +79,7 @@ Map of path prefixes to path replacements. The prefixes will be searched in the 
 Type: `Boolean`<br>
 Default: `false`
 
-If enabled and no prefix will be detected in a source path, the transformation will fail by throwing an error.
+If enabled and no prefix is detected in a source path, the transformation will fail by throwing an error.
 
 ## Contributing
 
