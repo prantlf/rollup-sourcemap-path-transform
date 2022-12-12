@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/prantlf/rollup-sourcemap-path-transform/compare/v1.0.2...v1.0.3) (2022-12-12)
+
+
+### Bug Fixes
+
+* Normalise backslashes to forward slashes in the source map paths ([f37ee27](https://github.com/prantlf/rollup-sourcemap-path-transform/commit/f37ee27aeae082364876d89f7cb0b5f6f1f4c02e))
+
 ## [1.0.2](https://github.com/prantlf/rollup-sourcemap-path-transform/compare/v1.0.1...v1.0.2) (2022-10-30)
 
 
