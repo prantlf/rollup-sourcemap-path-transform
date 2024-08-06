@@ -1,3 +1,9 @@
+## [1.0.5](https://github.com/prantlf/rollup-sourcemap-path-transform/compare/v1.0.4...v1.0.5) (2024-08-06)
+
+### Bug Fixes
+
+* Upgrade dependencies ([c575a0e](https://github.com/prantlf/rollup-sourcemap-path-transform/commit/c575a0e4d3b6ae14897f34c319fa39d13c872230))
+
 ## [1.0.4](https://github.com/prantlf/rollup-sourcemap-path-transform/compare/v1.0.3...v1.0.4) (2023-10-08)
 
 

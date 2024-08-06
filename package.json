@@ -1,6 +1,6 @@
 {
   "name": "rollup-sourcemap-path-transform",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Function sourcemapPathTransform for Rollup to rebase sources in source maps, so that they start with the same path prefix.",
   "author": "Ferdinand Prantl <prantlf@gmail.com> (http://prantl.tk)",
   "license": "MIT",
