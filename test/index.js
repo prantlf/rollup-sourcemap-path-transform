@@ -1,5 +1,5 @@
-import { fail, strictEqual } from 'assert'
-import { fileURLToPath } from 'url'
+import { fail, strictEqual } from 'node:assert'
+import { fileURLToPath } from 'node:url'
 import tehanu from 'tehanu'
 import { createPathTransform } from '../lib/index.js'
 
@@ -47,6 +47,6 @@ test('reports unrecognised path', () => {
     rebase('page/index.js')
     fail('processed unrecognised path')
   } catch ({ message }) {
-    strictEqual(message, `Unrecognised path: page/index.js`)
+    strictEqual(message, 'Unrecognised path: page/index.js')
   }
 })

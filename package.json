@@ -29,10 +29,10 @@
   },
   "scripts": {
     "prepare": "rollup -c",
-    "lint": "denolint",
+    "lint": "biome lint *.js lib test",
     "check": "teru-esm test/index.js",
     "cover": "c8 teru-esm test/index.js",
-    "test": "denolint && c8 teru-esm test/index.js"
+    "test": "biome lint *.js lib test && c8 teru-esm test/index.js"
   },
   "c8": {
     "check-coverage": true,
@@ -45,30 +45,13 @@
     "functions": 100,
     "statements": 100
   },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      [
-        "@semantic-release/github",
-        {
-          "failComment": false
-        }
-      ],
-      "@semantic-release/git"
-    ]
-  },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "c8": "^8.0.1",
-    "denolint": "^2.0.12",
-    "rollup": "^4.0.2",
+    "@biomejs/biome": "^1.8.3",
+    "c8": "^10.1.2",
+    "rollup": "^4.20.0",
     "tehanu": "^1.0.1",
-    "tehanu-repo-coco": "^1.0.0",
-    "tehanu-teru": "^1.0.0"
+    "tehanu-repo-coco": "^1.0.1",
+    "tehanu-teru": "^1.0.1"
   },
   "peerDependencies": {
     "rollup": "^2 || ^3 || ^4"
