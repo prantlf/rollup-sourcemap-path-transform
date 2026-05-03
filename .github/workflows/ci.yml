@@ -1,11 +1,22 @@
-name: Test or Release
+name: Test and Release
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - master
+    tags-ignore:
+      - '**'
+    paths-ignore:
+      - '**/*.md'
+      - LICENSE
+  pull_request:
+
+permissions:
+  id-token: write
+  contents: write
 
 jobs:
-  test-or-release:
+  test-and-release:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
@@ -22,6 +33,7 @@ jobs:
     - uses: codecov/codecov-action@v6
     - uses: prantlf/publish-release-action@v1
       with:
+        no-npm-auth: true
         no-archives: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
