@@ -19,21 +19,22 @@ jobs:
   test-and-release:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
-    - uses: pnpm/action-setup@v5
-      with:
-        version: latest
-    - uses: actions/setup-node@v6
-      with:
-        node-version: 'lts/*'
-        registry-url: 'https://registry.npmjs.org'
-        cache: 'pnpm'
-    - run: pnpm i --frozen-lockfile --no-verify-store-integrity
-    - run: npm test
-    - uses: codecov/codecov-action@v6
-    - uses: prantlf/publish-release-action@v1
-      with:
-        no-npm-auth: true
-        no-archives: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: latest
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 'lts/*'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
+      - run: pnpm i --frozen-lockfile --no-verify-store-integrity
+      - run: npm run build
+      - run: npm test
+      - uses: codecov/codecov-action@v7
+      - uses: prantlf/publish-release-action@v2
+        with:
+          no-npm-auth: true
+          no-archives: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

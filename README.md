@@ -1,7 +1,7 @@
 # rollup-sourcemap-path-transform
 
 [![Latest version](https://img.shields.io/npm/v/rollup-sourcemap-path-transform)
- ![Dependency status](https://img.shields.io/librariesio/release/npm/rollup-sourcemap-path-transform)
+![Dependency status](https://img.shields.io/librariesio/release/npm/rollup-sourcemap-path-transform)
 ](https://www.npmjs.com/package/rollup-sourcemap-path-transform)
 [![Coverage](https://codecov.io/gh/prantlf/rollup-sourcemap-path-transform/branch/master/graph/badge.svg)](https://codecov.io/gh/prantlf/rollup-sourcemap-path-transform)
 

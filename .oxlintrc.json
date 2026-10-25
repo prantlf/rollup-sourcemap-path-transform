@@ -1,0 +1,7 @@
+{
+  "plugins": ["import", "node", "promise"],
+  "rules": {
+    "promise/no-callback-in-promise": "off"
+  },
+  "ignorePatterns": ["lib/index.cjs"]
+}

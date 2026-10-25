@@ -2,53 +2,50 @@
   "name": "rollup-sourcemap-path-transform",
   "version": "1.2.0",
   "description": "Function sourcemapPathTransform for Rollup to rebase sources in source maps, so that they start with the same path prefix.",
-  "author": "Ferdinand Prantl <prantlf@gmail.com> (http://prantl.tk)",
-  "license": "MIT",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/prantlf/rollup-sourcemap-path-transform/blob/master/LICENSE"
-    }
+  "keywords": [
+    "path",
+    "plugin",
+    "rollup",
+    "rollup-plugin",
+    "sourcemap",
+    "sourcemapPathTransform",
+    "transform"
   ],
   "homepage": "http://github.com/prantlf/rollup-sourcemap-path-transform/",
+  "bugs": {
+    "url": "http://github.com/prantlf/rollup-sourcemap-path-transform/issues"
+  },
+  "license": "MIT",
+  "author": "Ferdinand Prantl <prantlf@gmail.com> (http://prantl.tk)",
   "repository": {
     "type": "git",
     "url": "https://github.com/prantlf/rollup-sourcemap-path-transform.git"
   },
-  "bugs": {
-    "url": "http://github.com/prantlf/rollup-sourcemap-path-transform/issues"
-  },
-  "type": "module",
-  "module": "lib/index.js",
-  "main": "lib/index.cjs",
   "files": [
     "lib"
   ],
-  "engines": {
-    "node": ">= 14.18"
+  "type": "module",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "exports": {
+    ".": {
+      "require": "./lib/index.cjs",
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
   },
   "scripts": {
-    "prepare": "rollup -c",
-    "lint": "biome lint *.js lib test",
+    "build": "rollup -c",
+    "lint": "oxlint",
     "check": "teru-esm test/index.js",
     "cover": "c8 teru-esm test/index.js",
-    "test": "biome lint *.js lib test && c8 teru-esm test/index.js"
-  },
-  "c8": {
-    "check-coverage": true,
-    "reporter": [
-      "text",
-      "lcov"
-    ],
-    "branches": 100,
-    "lines": 100,
-    "functions": 100,
-    "statements": 100
+    "test": "oxlint && c8 teru-esm test/index.js"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.14",
-    "c8": "^11.0.0",
-    "rollup": "^4.60.2",
+    "c8": "^12.0.0",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "rollup": "^4.65.0",
     "tehanu": "^1.0.1",
     "tehanu-repo-coco": "^1.0.1",
     "tehanu-teru": "^1.0.1"
@@ -56,13 +53,24 @@
   "peerDependencies": {
     "rollup": "^2 || ^3 || ^4"
   },
-  "keywords": [
-    "rollup",
-    "plugin",
-    "rollup-plugin",
-    "transform",
-    "sourcemap",
-    "path",
-    "sourcemapPathTransform"
+  "c8": {
+    "branches": 100,
+    "check-coverage": true,
+    "functions": 100,
+    "lines": 100,
+    "reporter": [
+      "text",
+      "lcov"
+    ],
+    "statements": 100
+  },
+  "engines": {
+    "node": ">= 14.18"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prantlf/rollup-sourcemap-path-transform/blob/master/LICENSE"
+    }
   ]
 }
